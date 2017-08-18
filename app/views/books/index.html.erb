@@ -21,7 +21,7 @@
     <% end %>
   </tbody>
 </table>
-<!-- 追加箇所開始 -->
+<p>
 <%= paginate @books %>
-<!-- 追加箇所終了 -->
+</p>
 <%= link_to 'New Book', new_book_path, :class => 'btn btn-primary' %>
