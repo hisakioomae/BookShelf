@@ -60,6 +60,10 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def my_books
+      @books = current_user.books.page params[:page]
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,6 +75,5 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :author, category_ids: [])
     end
-    
-    
+  
 end
